@@ -1,0 +1,51 @@
+Classification on the Original Dataset
+Original Dataset
+   Pregnancies  Glucose  BloodPressure  SkinThickness  Insulin   BMI  DiabetesPedigreeFunction  Age  Outcome
+0            6      148             72             35        0  33.6                     0.627   50        1
+1            1       85             66             29        0  26.6                     0.351   31        0
+2            8      183             64              0        0  23.3                     0.672   32        1
+3            1       89             66             23       94  28.1                     0.167   21        0
+4            0      137             40             35      168  43.1                     2.288   33        1
+
+Confusion Matrix for SVM (Original Dataset):
+          Predicted 0  Predicted 1
+Actual 0           87           12
+Actual 1           24           31
+Accuracy for SVM (Original Dataset): 0.7662337662337663
+
+Confusion Matrix for KNN (Original Dataset):
+          Predicted 0  Predicted 1
+Actual 0           70           29
+Actual 1           23           32
+Accuracy for KNN (Original Dataset): 0.6623376623376623
+
+ Replace Some Values with NaN
+Dataset with NaN values (After Replacing 0s):
+   Pregnancies  Glucose  BloodPressure  SkinThickness  Insulin   BMI  DiabetesPedigreeFunction  Age  Outcome
+0            6    148.0           72.0           35.0      NaN  33.6                     0.627   50        1
+1            1     85.0           66.0           29.0      NaN  26.6                     0.351   31        0
+2            8    183.0           64.0            NaN      NaN  23.3                     0.672   32        1
+3            1     89.0           66.0           23.0     94.0  28.1                     0.167   21        0
+4            0    137.0           40.0           35.0    168.0  43.1                     2.288   33        1
+
+ Replace NaN Values with Column Means
+Dataset After Replacing NaN with Column Means (First 5 Rows):
+   Pregnancies  Glucose  BloodPressure  SkinThickness     Insulin   BMI  DiabetesPedigreeFunction  Age  Outcome
+0            6    148.0           72.0       35.00000  155.548223  33.6                     0.627   50        1
+1            1     85.0           66.0       29.00000  155.548223  26.6                     0.351   31        0
+2            8    183.0           64.0       29.15342  155.548223  23.3                     0.672   32        1
+3            1     89.0           66.0       23.00000   94.000000  28.1                     0.167   21        0
+4            0    137.0           40.0       35.00000  168.000000  43.1                     2.288   33        1
+
+Classification After Replacing NaN with Column Means
+Confusion Matrix for SVM (After Replacing NaN with Column Means):
+          Predicted 0  Predicted 1
+Actual 0           87           12
+Actual 1           25           30
+Accuracy for SVM (After Replacing NaN with Column Means): 0.7597402597402597
+
+Confusion Matrix for KNN (After Replacing NaN with Column Means):
+          Predicted 0  Predicted 1
+Actual 0           66           33
+Actual 1           21           34
+Accuracy for KNN (After Replacing NaN with Column Means): 0.6493506493506493
